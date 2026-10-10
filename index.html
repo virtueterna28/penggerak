@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Penggerak Veterna - Angkatan Veterna Ar-Rohmah Putra</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Poppins & Lucide Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+        }
+        .bg-veterna-blue { background-color: #233686; }
+        .text-veterna-blue { color: #233686; }
+        .border-veterna-blue { border-color: #233686; }
+
+        /* Slider Animation */
+        .slider-container {
+            position: relative;
+            overflow: hidden;
+        }
+        .slide {
+            display: none;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        .slide.active {
+            display: block;
+            opacity: 1;
+            position: relative;
+        }
+    </style>
+</head>
+<body class="bg-slate-50">
+
+    <!-- Header / Navbar -->
+    <header class="bg-[#233686] text-white sticky top-0 z-50 shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <img src="https://github.com/virtueterna28/web/blob/main/mentahan%20aset%20web/logo%20veterna%20(1).png?raw=true" alt="Logo Veterna" class="h-12 w-12 object-contain bg-white/10 p-1 rounded-full">
+                <span class="text-xl font-bold tracking-wide">VETERNA 28</span>
+            </div>
+            <nav class="hidden md:flex space-x-8 font-medium">
+                <a href="#home" class="hover:text-blue-200 transition">Beranda</a>
+                <a href="#tentang" class="hover:text-blue-200 transition">Tentang Kami</a>
+                <a href="#struktur" class="hover:text-blue-200 transition">Struktur Tim</a>
+                <a href="#sosial" class="hover:text-blue-200 transition">Media Sosial</a>
+            </nav>
+            <div>
+                <a href="#tentang" class="bg-white text-[#233686] px-5 py-2.5 rounded-full font-semibold shadow hover:bg-blue-50 transition transform hover:-translate-y-0.5">Hubungi Kami</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section dengan Image Slider -->
+    <section id="home" class="relative bg-[#233686] text-white overflow-hidden">
+        <div class="slider-container w-full h-[500px] md:h-[600px]">
+            <div class="slide active h-full w-full">
+                <img src="https://i.ibb.co.com/d0YJZB4c/angkatan-1.jpg" class="w-full h-full object-cover brightness-50" alt="Angkatan Veterna 1">
+            </div>
+            <div class="slide h-full w-full">
+                <img src="https://i.ibb.co.com/d0YJZB4c/angkatan-1.jpg" class="w-full h-full object-cover brightness-50" alt="Angkatan Veterna 2">
+            </div>
+            <div class="slide h-full w-full">
+                <img src="https://github.com/virtueterna28/web/blob/main/mentahan%20aset%20web/Beranda/coban%20talun%20veterna.png?raw=true" class="w-full h-full object-cover brightness-50" alt="Coban Talun Veterna">
+            </div>
+            <div class="slide h-full w-full">
+                <img src="https://i.ibb.co.com/d0YJZB4c/angkatan-1.jpg" class="w-full h-full object-cover brightness-50" alt="Angkatan Veterna 4">
+            </div>
+            <div class="slide h-full w-full">
+                <img src="https://i.ibb.co.com/d0YJZB4c/angkatan-1.jpg" class="w-full h-full object-cover brightness-50" alt="Angkatan Veterna 5">
+            </div>
+        </div>
+
+        <div class="absolute inset-0 flex items-center justify-center text-center z-10 bg-black/40 px-4">
+            <div class="max-w-3xl">
+                <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-4 drop-shadow-md">Team Penggerak Veterna</h1>
+                <p class="text-lg md:text-xl text-blue-100 mb-8 font-light">Poros kepemimpinan, pergerakan solidaritas, dan motor utama santri Angkatan Veteran Pondok Pesantren Ar-Rohmah Putra.</p>
+                <div class="flex justify-center gap-4">
+                    <a href="#struktur" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-semibold shadow-lg transition transform hover:-translate-y-1">Lihat Struktur</a>
+                    <a href="#tentang" class="bg-white/10 hover:bg-white/20 border border-white/30 backdrop-blur-md text-white px-8 py-3 rounded-full font-semibold transition">Pelajari Lebih Lanjut</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 1. Tentang BTS Dan Team Artistik -->
+    <section id="tentang" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6">
+                <div class="inline-block bg-blue-100 text-[#233686] text-sm font-semibold px-4 py-1.5 rounded-full">Tentang Kami</div>
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 leading-tight">Tentang BTS Dan Team Artistik</h2>
+                <p class="text-slate-600 leading-relaxed text-lg">
+                    Team Penggerak Angkatan Veteran adalah jantung pergerakan, poros kepemimpinan, dan motor utama dalam merawat serta menguatkan solidaritas seluruh santri Angkatan Veteran. Dibentuk atas dasar kesadaran akan pentingnya persatuan (ukhuwah), tim ini berperan sebagai jembatan sinergi yang menggerakkan setiap ide, potensi, dan semangat anggota angkatan menuju visi bersama.
+                </p>
+                <div class="pt-4">
+                    <a href="#sosial" class="inline-flex items-center text-[#233686] font-semibold hover:gap-2 transition-all">
+                        Ikuti Perjalanan Kami <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="relative">
+                <div class="absolute -inset-2 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl blur-lg opacity-30"></div>
+                <div class="relative bg-white p-3 rounded-2xl shadow-xl">
+                    <img src="https://github.com/virtueterna28/kopastra/blob/main/mentahan%20foto/IMG-20250830-WA0047-scaled.jpeg?raw=true" alt="Team Penggerak" class="rounded-xl w-full h-[400px] object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. Struktur Keanggotaan Team Artistik -->
+    <section id="struktur" class="py-20 bg-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-3xl font-bold text-slate-900 mb-4">Struktur Keanggotaan Team Artistik</h2>
+                <p class="text-slate-600">Jajaran pengurus dan anggota yang mendedikasikan diri untuk kemajuan Angkatan Veterna.</p>
+            </div>
+
+            <!-- Grid Pengurus Inti & Anggota -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <!-- Ketua Angkatan -->
+                <div class="bg-white rounded-2xl shadow-sm hover:shadow-md transition overflow-hidden border border-slate-200 flex flex-col text-center p-6">
+                    <div class="w-28 h-28 mx-auto mb-4 rounded-full overflow-hidden border-4 border-blue-100 shadow-inner">
+                        <img src="https://github.com/virtueterna28/GPH/blob/main/foto/IMG_9191.jpg?raw=true" alt="Muhammad Dzaky Ammar" class="w-full h-full object-cover">
+                    </div>
+                    <span class="inline-block bg-[#233686] text-white text-xs font-semibold px-3 py-1 rounded-full mb-2 mx-auto">Ketua Angkatan</span>
+                    <h3 class="text-lg font-bold text-slate-800 mb-1">Muhammad Dzaky Ammar</h3>
+                    <a href="https://www.instagram.com/dzakmarr/" target="_blank" class="text-blue-600 hover:text-blue-800 text-sm font-medium mt-auto pt-2 inline-flex items-center justify-center gap-1">
+                        <i data-lucide="instagram" class="w-4 h-4"></i> @dzakmarr
+                    </a>
+                </div>
+
+                <!-- Wakil Ketua Angkatan -->
+                <div class="bg-white rounded-2xl shadow-sm hover:shadow-md transition overflow-hidden border border-slate-200 flex flex-col text-center p-6">
+                    <div class="w-28 h-28 mx-auto mb-4 rounded-full overflow-hidden border-4 border-blue-100 shadow-inner">
+                        <img src="https://github.com/virtueterna28/kopastra/blob/main/mentahan%20foto/DSC05199.jpg?raw=true" alt="M. Dhaif Kusyu Nur H." class="w-full h-full object-cover">
+                    </div>
+                    <span class="inline-block bg-[#233686] text-white text-xs font-semibold px-3 py-1 rounded-full mb-2 mx-auto">Wakil Ketua</span>
+                    <h3 class="text-lg font-bold text-slate-800 mb-1">M. Dhaif Kusyu Nur H.</h3>
+                    <a href="https://www.instagram.com/dhaiif._/" target="_blank" class="text-blue-600 hover:text-blue-800 text-sm font-medium mt-auto pt-2 inline-flex items-center justify-center gap-1">
+                        <i data-lucide="instagram" class="w-4 h-4"></i> @dhaiif._
+                    </a>
+                </div>
+
+                <!-- Sekretaris -->
+                <div class="bg-white rounded-2xl shadow-sm hover:shadow-md transition overflow-hidden border border-slate-200 flex flex-col text-center p-6">
+                    <div class="w-28 h-28 mx-auto mb-4 rounded-full overflow-hidden border-4 border-blue-100 shadow-inner">
+                        <img src="https://github.com/virtueterna28/GPH/blob/main/foto/DSC04197.jpg?raw=true" alt="Muhandis Alfathihatul Quds" class="w-full h-full object-cover">
+                    </div>
+                    <span class="inline-block bg-[#233686] text-white text-xs font-semibold px-3 py-1 rounded-full mb-2 mx-auto">Sekretaris</span>
+                    <h3 class="text-lg font-bold text-slate-800 mb-1">Muhandis Alfathihatul Quds</h3>
+                    <a href="https://www.instagram.com/howndiz/" target="_blank" class="text-blue-600 hover:text-blue-800 text-sm font-medium mt-auto pt-2 inline-flex items-center justify-center gap-1">
+                        <i data-lucide="instagram" class="w-4 h-4"></i> @howndiz
+                    </a>
+                </div>
+
+                <!-- Bendahara -->
+                <div class="bg-white rounded-2xl shadow-sm hover:shadow-md transition overflow-hidden border border-slate-200 flex flex-col text-center p-6">
+                    <div class="w-28 h-28 mx-auto mb-4 rounded-full overflow-hidden border-4 border-blue-100 shadow-inner bg-slate-200 flex items-center justify-center text-slate-400">
+                        <i data-lucide="user" class="w-12 h-12"></i>
+                    </div>
+                    <span class="inline-block bg-[#233686] text-white text-xs font-semibold px-3 py-1 rounded-full mb-2 mx-auto">Bendahara</span>
+                    <h3 class="text-lg font-bold text-slate-800 mb-1">Omar Maqil Ghaisani</h3>
+                    <a href="https://www.instagram.com/omarmqil?stkn=MTFnNjJ0dWt6OHY4aQ==" target="_blank" class="text-blue-600 hover:text-blue-800 text-sm font-medium mt-auto pt-2 inline-flex items-center justify-center gap-1">
+                        <i data-lucide="instagram" class="w-4 h-4"></i> @omarmqil
+                    </a>
+                </div>
+
+                <!-- Anggota Dengan Foto: Muhammad Dzaki Nafil -->
+                <div class="bg-white rounded-2xl shadow-sm hover:shadow-md transition overflow-hidden border border-slate-200 flex flex-col text-center p-6">
+                    <div class="w-28 h-28 mx-auto mb-4 rounded-full overflow-hidden border-4 border-slate-100 shadow-inner">
+                        <img src="https://github.com/virtueterna28/GPH/blob/main/foto/DSC04256.jpg?raw=true" alt="Muhammad Dzaki Nafil" class="w-full h-full object-cover">
+                    </div>
+                    <span class="inline-block bg-slate-600 text-white text-xs font-semibold px-3 py-1 rounded-full mb-2 mx-auto">Anggota</span>
+                    <h3 class="text-lg font-bold text-slate-800 mb-1">Muhammad Dzaki Nafil</h3>
+                    <a href="https://www.instagram.com/zacknaf_/" target="_blank" class="text-blue-600 hover:text-blue-800 text-sm font-medium mt-auto pt-2 inline-flex items-center justify-center gap-1">
+                        <i data-lucide="instagram" class="w-4 h-4"></i> @zacknaf_
+                    </a>
+                </div>
+
+                <!-- CONTAINER UNTUK ANGGOTA YANG DAPAT DIEDIT/DITAMBAHKAN PROGRAMMER -->
+                <!-- Seluruh kartu anggota di bawah ini di-render secara dinamis dari array Script 'anggotaList' -->
+                <div id="anggota-container" class="contents"></div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Media Sosial -->
+    <section id="sosial" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="max-w-2xl mx-auto mb-12">
+            <h2 class="text-3xl font-bold text-slate-900 mb-4">Temukan Kami di Media Sosial</h2>
+            <p class="text-slate-600">Tetap terhubung dan ikuti berbagai keseruan serta informasi terbaru seputar kegiatan angkatan kami.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+            <a href="https://www.instagram.com/veterna28/" target="_blank" class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition transform hover:-translate-y-1 border border-slate-100 flex flex-col items-center">
+                <img src="https://i.ibb.co.com/SXfnj442/ig.png" alt="Instagram Logo" class="w-16 h-16 object-contain mb-4">
+                <h3 class="text-lg font-bold text-slate-800 mb-1">Instagram</h3>
+                <p class="text-slate-500 text-sm mb-4">@veterna28</p>
+                <span class="mt-auto text-blue-600 font-medium text-sm inline-flex items-center gap-1">Kunjungi <i data-lucide="external-link" class="w-4 h-4"></i></span>
+            </a>
+
+            <a href="https://www.tiktok.com/@smaarrohmahputra" target="_blank" class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition transform hover:-translate-y-1 border border-slate-100 flex flex-col items-center">
+                <img src="https://i.ibb.co.com/rRsMT240/tiktok.png" alt="Tiktok Logo" class="w-16 h-16 object-contain mb-4">
+                <h3 class="text-lg font-bold text-slate-800 mb-1">TikTok</h3>
+                <p class="text-slate-500 text-sm mb-4">@smaarrohmahputra</p>
+                <span class="mt-auto text-blue-600 font-medium text-sm inline-flex items-center gap-1">Kunjungi <i data-lucide="external-link" class="w-4 h-4"></i></span>
+            </a>
+
+            <a href="https://www.youtube.com/@smaartramalang" target="_blank" class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition transform hover:-translate-y-1 border border-slate-100 flex flex-col items-center">
+                <img src="https://i.ibb.co.com/tMrZjRZx/yt.png" alt="Youtube Logo" class="w-16 h-16 object-contain mb-4">
+                <h3 class="text-lg font-bold text-slate-800 mb-1">YouTube</h3>
+                <p class="text-slate-500 text-sm mb-4">@smaartramalang</p>
+                <span class="mt-auto text-blue-600 font-medium text-sm inline-flex items-center gap-1">Kunjungi <i data-lucide="external-link" class="w-4 h-4"></i></span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#233686] text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center space-x-3">
+                <img src="https://github.com/virtueterna28/web/blob/main/mentahan%20aset%20web/logo%20veterna%20(1).png?raw=true" alt="Logo Veterna" class="h-10 w-10 object-contain bg-white/10 p-1 rounded-full">
+                <span class="font-bold text-lg">Team Penggerak Veterna</span>
+            </div>
+            <p class="text-blue-200 text-sm text-center">&copy; 2026 Angkatan Veterna - Pondok Pesantren Ar-Rohmah Putra. All rights reserved.</p>
+            <div class="flex space-x-4">
+                <a href="https://www.instagram.com/veterna28/" target="_blank" class="bg-white/10 p-2.5 rounded-full hover:bg-white/20 transition"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+                <a href="https://www.youtube.com/@smaartramalang" target="_blank" class="bg-white/10 p-2.5 rounded-full hover:bg-white/20 transition"><i data-lucide="youtube" class="w-5 h-5"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPT PROGRAMMER UNTUK PENGELOLAAN DATA ANGGOTA -->
+    <script>
+        /* 
+           ==========================================================================
+           AREA EDIT PROGRAMMER / DEVELOPER
+           Silakan ubah/tambah data anggota di dalam array 'anggotaList' di bawah ini.
+           - Jika 'foto' diisi URL, foto akan muncul. Jika dibiarkan "" / null, akan tampil icon user default.
+           - Jika 'instagramHandle' & 'instagramLink' diisi, tombol IG akan aktif otomatis.
+           ==========================================================================
+        */
+        const anggotaList = [
+            {
+                nama: "Darwin",
+                foto: "", // Isikan URL foto jika ada, misal: "https://domain.com/foto.jpg"
+                instagramHandle: "", // misal: "@darwin_username"
+                instagramLink: ""    // misal: "https://www.instagram.com/darwin_username/"
+            },
+            {
+                nama: "Gagah",
+                foto: "",
+                instagramHandle: "",
+                instagramLink: ""
+            },
+            {
+                nama: "Said Khotob",
+                foto: "",
+                instagramHandle: "kaka",
+                instagramLink: "https://www.instagram.com/howndiz/"
+            },
+            {
+                nama: "Lala",
+                foto: "",
+                instagramHandle: "",
+                instagramLink: ""
+            },
+            {
+                nama: "Gaga",
+                foto: "",
+                instagramHandle: "",
+                instagramLink: ""
+            },
+            {
+                nama: "Kalo",
+                foto: "",
+                instagramHandle: "",
+                instagramLink: ""
+            },
+            {
+                nama: "Ucu",
+                foto: "",
+                instagramHandle: "",
+                instagramLink: ""
+            },
+            {
+                nama: "Budi",
+                foto: "",
+                instagramHandle: "",
+                instagramLink: ""
+            },
+            {
+                nama: "Kala",
+                foto: "",
+                instagramHandle: "",
+                instagramLink: ""
+            },
+            {
+                nama: "Jja",
+                foto: "",
+                instagramHandle: "",
+                instagramLink: ""
+            }
+        ];
+
+        // Function Rendering Kartu Anggota
+        function renderAnggota() {
+            const container = document.getElementById('anggota-container');
+            if (!container) return;
+
+            let html = '';
+            anggotaList.forEach(item => {
+                // Render elemen foto profil atau icon placeholder
+                const photoHTML = item.foto && item.foto.trim() !== "" 
+                    ? `<img src="${item.foto}" alt="${item.nama}" class="w-full h-full object-cover">`
+                    : `<div class="w-full h-full bg-slate-200 flex items-center justify-center text-slate-400"><i data-lucide="user" class="w-12 h-12"></i></div>`;
+
+                // Render elemen Instagram atau placeholder kosong
+                const igHTML = item.instagramLink && item.instagramLink.trim() !== ""
+                    ? `<a href="${item.instagramLink}" target="_blank" class="text-blue-600 hover:text-blue-800 text-sm font-medium mt-auto pt-2 inline-flex items-center justify-center gap-1">
+                        <i data-lucide="instagram" class="w-4 h-4"></i> ${item.instagramHandle || '@instagram'}
+                       </a>`
+                    : `<span class="text-slate-400 text-sm mt-auto pt-2">-</span>`;
+
+                html += `
+                    <div class="bg-white rounded-2xl shadow-sm hover:shadow-md transition overflow-hidden border border-slate-200 flex flex-col text-center p-6">
+                        <div class="w-28 h-28 mx-auto mb-4 rounded-full overflow-hidden border-4 border-slate-100 shadow-inner">
+                            ${photoHTML}
+                        </div>
+                        <span class="inline-block bg-slate-600 text-white text-xs font-semibold px-3 py-1 rounded-full mb-2 mx-auto">Anggota</span>
+                        <h3 class="text-lg font-bold text-slate-800 mb-1 capitalize">${item.nama}</h3>
+                        ${igHTML}
+                    </div>
+                `;
+            });
+
+            container.innerHTML = html;
+        }
+
+        // Run rendering
+        renderAnggota();
+
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Image Slider Functionality
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+
+        function nextSlide() {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+
+        setInterval(nextSlide, 4000);
+    </script>
+</body>
+</html>
