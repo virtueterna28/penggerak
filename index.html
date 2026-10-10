@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biodata Web Developer Veterna - Abhipraya Damas Okta Ardana</title>
+    <!-- Font Google & FontAwesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* --- Reset & Variables --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --primary-blue: #233686;
+            --accent-blue: #3b52b3;
+            --light-blue: #eef2ff;
+            --dark-color: #1e293b;
+            --gray-color: #64748b;
+            --light-bg: #f8fafc;
+            --white: #ffffff;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            color: var(--dark-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* --- Header & Navigation --- */
+        header {
+            background-color: var(--primary-blue);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            padding: 12px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-container img {
+            height: 48px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .logo-text {
+            color: var(--white);
+            font-weight: 700;
+            font-size: 1.2rem;
+            letter-spacing: 0.5px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav a {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        nav a:hover {
+            color: #93c5fd;
+        }
+
+        /* --- Hero Slider --- */
+        .hero-slider {
+            margin-top: 72px;
+            position: relative;
+            width: 100%;
+            height: 80vh;
+            min-height: 450px;
+            overflow: hidden;
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .slide.active {
+            opacity: 1;
+        }
+
+        .slide-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(35, 54, 134, 0.4), rgba(15, 23, 42, 0.7));
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+            padding: 0 20px;
+        }
+
+        .slide-overlay h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+            animation: fadeInDown 1s ease;
+        }
+
+        .slide-overlay p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+            animation: fadeInUp 1s ease;
+        }
+
+        /* Navigasi Slider Controls */
+        .slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.2);
+            color: var(--white);
+            border: none;
+            padding: 15px 18px;
+            cursor: pointer;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            backdrop-filter: blur(5px);
+            transition: var(--transition);
+            z-index: 10;
+        }
+
+        .slider-btn:hover {
+            background: var(--primary-blue);
+        }
+
+        .prev-btn { left: 20px; }
+        .next-btn { right: 20px; }
+
+        /* --- Global Section Style --- */
+        section {
+            padding: 80px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--primary-blue);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background-color: var(--accent-blue);
+            border-radius: 2px;
+        }
+
+        /* --- Buttons --- */
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background-color: var(--primary-blue);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(35, 54, 134, 0.3);
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-blue);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(35, 54, 134, 0.4);
+        }
+
+        /* --- 1. Sambutan Koordinator --- */
+        .sambutan-container {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .koordinator-profile {
+            margin-bottom: 25px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .img-square-11 {
+            width: 180px;
+            height: 180px;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            border: 4px solid var(--light-blue);
+            margin-bottom: 15px;
+        }
+
+        .koordinator-name {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+        }
+
+        .sambutan-text {
+            text-align: justify;
+            color: var(--gray-color);
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            background: var(--light-bg);
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 5px solid var(--primary-blue);
+        }
+
+        .instagram-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #e1306c;
+            font-weight: 600;
+            text-decoration: none;
+            margin-top: 15px;
+            transition: var(--transition);
+        }
+
+        .instagram-link:hover {
+            transform: scale(1.05);
+        }
+
+        /* --- 2. Biodata Section --- */
+        .biodata-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 40px;
+            align-items: start;
+            background: var(--white);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+        }
+
+        .biodata-left {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .biodata-img {
+            width: 100%;
+            max-width: 320px;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            margin-bottom: 20px;
+            object-fit: cover;
+        }
+
+        .motto-box {
+            background: var(--light-blue);
+            border-radius: 12px;
+            padding: 15px 20px;
+            color: var(--primary-blue);
+            font-style: italic;
+            font-weight: 600;
+            width: 100%;
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.03);
+        }
+
+        .biodata-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .biodata-table tr {
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .biodata-table tr:last-child {
+            border-bottom: none;
+        }
+
+        .biodata-table td {
+            padding: 12px 10px;
+            vertical-align: top;
+        }
+
+        .biodata-table td.label {
+            font-weight: 600;
+            color: var(--primary-blue);
+            width: 35%;
+        }
+
+        /* --- 3. Deskripsi Diri --- */
+        .deskripsi-card {
+            background: var(--white);
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--dark-color);
+            position: relative;
+        }
+
+        .deskripsi-card::before {
+            content: '\f10d';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 3rem;
+            color: var(--light-blue);
+            z-index: 0;
+        }
+
+        .deskripsi-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* --- 4. Riwayat Organisasi --- */
+        .org-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .org-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+            border-top: 4px solid var(--primary-blue);
+            transition: var(--transition);
+        }
+
+        .org-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .org-card h3 {
+            color: var(--primary-blue);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .org-card p {
+            color: var(--gray-color);
+            font-weight: 500;
+        }
+
+        /* --- 5. Keahlian & Kualifikasi --- */
+        .skills-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 40px;
+            background: var(--white);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            align-items: center;
+        }
+
+        .skills-info {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .skill-box h4 {
+            color: var(--primary-blue);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .skills-right-img {
+            text-align: center;
+        }
+
+        /* --- 6. Prestasi --- */
+        .prestasi-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .prestasi-item {
+            background: var(--white);
+            padding: 20px 25px;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            border-left: 5px solid #f59e0b;
+            transition: var(--transition);
+        }
+
+        .prestasi-item:hover {
+            transform: translateX(10px);
+        }
+
+        .prestasi-icon {
+            background: #fef3c7;
+            color: #d97706;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            flex-shrink: 0;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            text-align: center;
+            padding: 30px;
+            margin-top: 50px;
+        }
+
+        /* --- Animations --- */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 902px) {
+            .biodata-grid, .skills-wrapper {
+                grid-template-columns: 1fr;
+            }
+            nav ul {
+                display: none; /* Dapat dikembangkan dengan menu toggle Hamburger */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="logo-container">
+            <img src="https://github.com/virtueterna28/developerwebveterna/blob/main/Logo.png?raw=true" alt="Logo Damas">
+            <span class="logo-text">Veterna Web</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#sambutan">Sambutan</a></li>
+                <li><a href="#biodata">Biodata</a></li>
+                <li><a href="#organisasi">Organisasi</a></li>
+                <li><a href="#keahlian">Keahlian</a></li>
+                <li><a href="#prestasi">Prestasi</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section / Image Slider -->
+    <section id="home" class="hero-slider">
+        <div class="slide active" style="background-image: url('https://github.com/virtueterna28/developerwebveterna/blob/main/gambar/IMG_20250405_081349.jpg?raw=true');">
+            <div class="slide-overlay">
+                <h1>Web Developer Veterna</h1>
+                <p>Pengembangan Ruang Digital & Inovasi Angkatan</p>
+            </div>
+        </div>
+        <div class="slide" style="background-image: url('https://github.com/virtueterna28/developerwebveterna/blob/main/gambar/IMG_20250405_081444.jpg?raw=true');">
+            <div class="slide-overlay">
+                <h1>Kreativitas & Seni Visual</h1>
+                <p>Mengabdi Melalui Karya Teknologi dan Desain</p>
+            </div>
+        </div>
+        <div class="slide" style="background-image: url('https://github.com/virtueterna28/developerwebveterna/blob/main/gambar/IMG_20250405_081457.jpg?raw=true');">
+            <div class="slide-overlay">
+                <h1>Ukhuwah Digital</h1>
+                <p>Etalase Kenangan dan Jejak Kebaikan Ar-Rohmah Putra</p>
+            </div>
+        </div>
+        <div class="slide" style="background-image: url('https://github.com/virtueterna28/developerwebveterna/blob/main/gambar/IMG_20250405_081543.jpg?raw=true');">
+            <div class="slide-overlay">
+                <h1>Inovatif & Berakhlak</h1>
+                <p>Bertakwa, Disiplin, dan Inovatif Dalam Berkarya</p>
+            </div>
+        </div>
+
+        <button class="slider-btn prev-btn" onclick="prevSlide()"><i class="fas fa-chevron-left"></i></button>
+        <button class="slider-btn next-btn" onclick="nextSlide()"><i class="fas fa-chevron-right"></i></button>
+    </section>
+
+    <!-- 1. Sambutan Koordinator Website Veterna -->
+    <section id="sambutan">
+        <div class="section-title">
+            <h2>Sambutan Koordinator</h2>
+        </div>
+        <div class="sambutan-container">
+            <div class="koordinator-profile">
+                <img src="https://github.com/virtueterna28/web/blob/main/mentahan%20aset%20web/Beranda/damas.jpeg?raw=true" alt="Abhipraya Damas Okta Ardana" class="img-square-11">
+                <div class="koordinator-name">Abhipraya Damas Okta Ardana</div>
+                <a href="#biodata" class="btn" style="margin-top: 15px;">biodata web developer</a>
+            </div>
+            
+            <div class="sambutan-text">
+                Assalamu’alaikum Warahmatullahi Wabarakatuh.<br><br>
+                Alhamdulillahirabbil ‘alamin, washalatu wasalamu ‘ala asyrafil anbiya’i wal mursalin, wa ‘ala alihi washabihi ajma’in. Amma ba'du.<br><br>
+                Yang kami hormati, Pimpinan Pondok Pesantren Ar-Rohmah Putra beserta jajaran asatidz yang senantiasa membimbing kami. Serta yang saya cintai dan banggakan, saudara-saudara seperjuangan, keluarga besar Angkatan Veterna.<br><br>
+                Puji syukur kehadirat Allah SWT atas segala nikmat-Nya, sehingga pada kesempatan yang baik ini kita dapat berkumpul untuk menyaksikan realisasi dari salah satu cita-cita angkatan kita, yakni peluncuran website resmi Angkatan Veterna. Shalawat dan salam senantiasa tercurah kepada junjungan kita, Nabi Muhammad SAW.<br><br>
+                Berdirinya saya di sini mewakili tim pengembang, ingin menyampaikan rasa syukur dan terima kasih yang tak terhingga atas rampungnya proyek digital ini. Membangun sebuah ruang digital yang merepresentasikan identitas, kreativitas visual, dan rekam jejak kebaikan angkatan kita bukanlah hal yang bisa dilakukan sendirian.<br><br>
+                Kepada segenap asatidz, kami mengucapkan jazakumullah khairan katsiran. Terima kasih yang sebesar-besarnya atas doa, arahan, dan ruang kebebasan berekspresi yang ustadz berikan kepada kami. Dukungan para asatidz memotivasi kami untuk menjadikan teknologi dan desain digital sebagai sarana syiar dan silaturahmi yang bernilai positif.<br><br>
+                Ucapan terima kasih yang sama juga saya tujukan kepada seluruh teman-teman Angkatan Veterna. Terima kasih atas setiap sumbangsih ide, tenaga, materi, dan dukungan moril yang tiada henti. Layar digital ini adalah etalase ukhuwah kita; sebuah karya dari kita, oleh kita, dan untuk kenangan kita bersama di Ar-Rohmah Putra tercinta.<br><br>
+                Kami menyadari website ini masih jauh dari kata sempurna. Oleh karena itu, kami sangat terbuka terhadap setiap masukan agar platform ini dapat terus berkembang dan memberikan manfaat yang lebih luas. Semoga Allah SWT mencatat ikhtiar kecil kita ini sebagai amal jariyah yang membawa keberkahan.<br><br>
+                Nasrun minallah wa fathun qariib.<br>
+                Wabillahi taufiq wal hidayah, Wassalamu’alaikum Warahmatullahi Wabarakatuh.
+            </div>
+
+            <a href="https://www.instagram.com/rayfin_cruise/" target="_blank" class="instagram-link">
+                <i class="fab fa-instagram fa-lg"></i> @rayfin_cruise
+            </a>
+        </div>
+    </section>
+
+    <!-- 2. Biodata Mas Damas -->
+    <section id="biodata">
+        <div class="section-title">
+            <h2>Biodata Web Developer</h2>
+        </div>
+        <div class="biodata-grid">
+            <div class="biodata-left">
+                <img src="https://github.com/virtueterna28/developerwebveterna/blob/main/gambar/abhipraya-damas.jpg?raw=true" alt="Abhipraya Damas Okta Ardana" class="biodata-img">
+                <div class="motto-box">
+                    <i class="fas fa-quote-left" style="margin-right: 5px;"></i>
+                    Bertakwa, Disiplin dan Inovatif Dalam Berkarya
+                </div>
+            </div>
+            <div class="biodata-right">
+                <table class="biodata-table">
+                    <tr>
+                        <td class="label">Nama Lengkap</td>
+                        <td>: Abhipraya Damas Okta Ardana</td>
+                    </tr>
+                    <tr>
+                        <td class="label">Nama Panggilan</td>
+                        <td>: Damas</td>
+                    </tr>
+                    <tr>
+                        <td class="label">Alias</td>
+                        <td>: Mbah, Skater, tukang sound masjid, anak pak mahdi</td>
+                    </tr>
+                    <tr>
+                        <td class="label">TTL</td>
+                        <td>: Bojonegoro, 16 Oktober 2026</td>
+                    </tr>
+                    <tr>
+                        <td class="label">Kuliah</td>
+                        <td>: Universitas Surabaya, Fakultas Bahasa dan Seni, DKV</td>
+                    </tr>
+                    <tr>
+                        <td class="label">Hobi</td>
+                        <td>: Bersepeda, Desain</td>
+                    </tr>
+                    <tr>
+                        <td class="label">Kewarganegaraan / Suku</td>
+                        <td>: WNI / Suku Jawa Tegal</td>
+                    </tr>
+                    <tr>
+                        <td class="label">Alamat</td>
+                        <td>: Bojonegoro, JAWA TIMUR</td>
+                    </tr>
+                    <tr>
+                        <td class="label">Kontak</td>
+                        <td>: +62 858-5276-4293</td>
+                    </tr>
+                    <tr>
+                        <td class="label">Email</td>
+                        <td>: abhiprayadamas2008@gmail.com</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Deskripsi Diri Pribadi -->
+    <section id="deskripsi">
+        <div class="section-title">
+            <h2>Deskripsi Diri</h2>
+        </div>
+        <div class="deskripsi-card">
+            <div class="deskripsi-content">
+                <p>Beliau sering dipanggil <strong>mbah</strong> di asrama dan di sekolah karena ia adalah juru bahasa Jawa Krama, dan sering dipanggil <strong>skater</strong> sebab sering bermain skateboard di asrama Daris serta di aula utama. Ia selalu menggunakan bandana berwarna biru sebagai simbol kebudayaan dirinya.</p>
+                <br>
+                <p>Selain itu, ia juga menjabat sebagai pengurus Takmir Masjid Baiturrohmah di bagian kreativitas, serta menjadi anak kesayangan Ust. Nur yang sering membantu membenarkan sound masjid.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Riwayat Organisasi -->
+    <section id="organisasi">
+        <div class="section-title">
+            <h2>Riwayat Organisasi</h2>
+        </div>
+        <div class="org-grid">
+            <div class="org-card">
+                <h3>DKM Baiturrohmah</h3>
+                <p>(Dewan Kemakmuran Masjid Baiturrohmah)</p>
+                <small style="color: var(--primary-blue); font-weight: 600;">Departemen Seni dan Kreasi</small>
+            </div>
+            <div class="org-card">
+                <h3>Team BTS dan Artistik Veterna</h3>
+                <p>Koordinator Website Veterna</p>
+            </div>
+            <div class="org-card">
+                <h3>Ketua Ekstrakurikuler Multimedia</h3>
+                <p>Desain, Editing, dan Tipografi</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Keahlian & Kualifikasi -->
+    <section id="keahlian">
+        <div class="section-title">
+            <h2>Keahlian & Kualifikasi</h2>
+        </div>
+        <div class="skills-wrapper">
+            <div class="skills-info">
+                <div class="skill-box">
+                    <h4><i class="fas fa-code"></i> Keahlian Teknis (Hard Skills)</h4>
+                    <p>Penguasaan bahasa pemrograman C++ & HTML, Desain Grafis, Editing Video, dan Web Development.</p>
+                </div>
+                <div class="skill-box">
+                    <h4><i class="fas fa-users"></i> Keahlian Non-Teknis (Soft Skills)</h4>
+                    <p>Kepemimpinan, Komunikasi, Manajemen Waktu, dan Pemecahan Masalah (Problem Solving).</p>
+                </div>
+                <div class="skill-box">
+                    <h4><i class="fas fa-language"></i> Penguasaan Bahasa</h4>
+                    <p>Bahasa Indonesia, Jawa Krama, dan Bahasa Inggris.</p>
+                </div>
+            </div>
+            <div class="skills-right-img">
+                <img src="https://github.com/virtueterna28/web/blob/main/mentahan%20aset%20web/Beranda/damas.jpeg?raw=true" alt="Abhipraya Damas Okta Ardana" class="img-square-11">
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Prestasi, Karya, & Penghargaan -->
+    <section id="prestasi">
+        <div class="section-title">
+            <h2>Prestasi & Penghargaan</h2>
+        </div>
+        <div class="prestasi-list">
+            <div class="prestasi-item">
+                <div class="prestasi-icon"><i class="fas fa-trophy"></i></div>
+                <div>
+                    <h3>JUARA 2 - HIMASOS UINSA</h3>
+                    <p>Medkom Jelajah Kemerdekaan!</p>
+                </div>
+            </div>
+            <div class="prestasi-item">
+                <div class="prestasi-icon"><i class="fas fa-award"></i></div>
+                <div>
+                    <h3>Peserta / Pemenang - ELECTRICAL VISION II 2026</h3>
+                    <p>Kompetisi Bidang Teknologi & Kelistrikan</p>
+                </div>
+            </div>
+            <div class="prestasi-item">
+                <div class="prestasi-icon"><i class="fas fa-medal"></i></div>
+                <div>
+                    <h3>Lomba Poster Nasional Public Health Project 2025</h3>
+                    <p>Universitas Negeri Malang (UM Malang)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p style="margin-bottom: 10px;">&copy; 2026 Web Developer Veterna - Abhipraya Damas Okta Ardana.</p>
+        <a href="https://wa.me/6285852764293" target="_blank" class="btn" style="background-color: #25d366; color: white;">
+            <i class="fab fa-whatsapp"></i> Hubungi Kami
+        </a>
+    </footer>
+
+    <!-- Slider Script -->
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                if (i === index) {
+                    slide.classList.add('active');
+                }
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            showSlide(currentSlide);
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            showSlide(currentSlide);
+        }
+
+        // Auto slide setiap 5 detik
+        setInterval(nextSlide, 5000);
+    </script>
+</body>
+</html>
